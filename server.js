@@ -23,4 +23,9 @@ app.use('/api/products', productRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server berjalan di http://localhost:${PORT}`);
+
+  require('dotenv').config(); 
+
+  const authRoutes = require("./routes/auth.routes");
+  app.use('/api/auth', authRoutes);
 });
